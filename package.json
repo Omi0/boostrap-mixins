@@ -1,0 +1,13 @@
+{
+  "name": "@omio/boostrap-mixins",
+  "description": "Custom collection of handy sass mixins for Boostrap 4",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Omi0/boostrap-mixins.git"
+  },
+  "version": "0.0.1",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.0.0"
+  }
+}

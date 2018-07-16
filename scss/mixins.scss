@@ -1,0 +1,249 @@
+@import "~bootstrap/scss/bootstrap-grid.scss";
+@import "~bootstrap/scss/mixins";
+
+/*
+ * Responsive Border
+ * border-{breakpoint}-{side}
+ * border-{breakpoint}-{side}-none
+ * side: top, right, bottom, left, x, y
+ */
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .border#{$infix}-top {
+      border-top: $border-width solid $border-color;
+    }
+    .border#{$infix}-right {
+      border-right: $border-width solid $border-color;
+    }
+    .border#{$infix}-bottom {
+      border-bottom: $border-width solid $border-color;
+    }
+    .border#{$infix}-left {
+      border-left: $border-width solid $border-color;
+    }
+
+    .border#{$infix}-top-none {
+      border-top: 0 !important;
+    }
+    .border#{$infix}-right-none {
+      border-right: 0 !important;
+    }
+    .border#{$infix}-bottom-none {
+      border-bottom: 0 !important;
+    }
+    .border#{$infix}-left-none {
+      border-left: 0 !important;
+    }
+
+    .border#{$infix}-x {
+      border-left: $border-width solid $border-color;
+      border-right: $border-width solid $border-color;
+    }
+
+    .border#{$infix}-y {
+      border-top: $border-width solid $border-color;
+      border-bottom: $border-width solid $border-color;
+    }
+  }
+}
+
+/*
+ * Responsive Negative Top, Bottom Margings
+ * mn{side}-{breakpoint}-{size}
+ * sides: t, b, r, l
+ * size used $spacers array (can be extended). By defaults they are 1-5.
+ */
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @each $prop, $abbrev in (margin: m) {
+      @each $size, $length in $spacers {
+        .#{$abbrev}tn#{$infix}-#{$size} {
+          #{$prop}-top: -$length !important;
+        }
+        .#{$abbrev}bn#{$infix}-#{$size} {
+          #{$prop}-bottom: -$length !important;
+        }
+        .#{$abbrev}rn#{$infix}-#{$size} {
+          #{$prop}-top: -$length !important;
+        }
+        .#{$abbrev}ln#{$infix}-#{$size} {
+          #{$prop}-bottom: -$length !important;
+        }
+      }
+    }
+  }
+}
+
+/*
+ * Responsive Headings
+ * {h1-h6}-{breakpoint}
+ */
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .h1#{$infix} {
+      font-size: $h1-font-size;
+    }
+    .h2#{$infix} {
+      font-size: $h2-font-size;
+    }
+    .h3#{$infix} {
+      font-size: $h3-font-size;
+    }
+    .h4#{$infix} {
+      font-size: $h4-font-size;
+    }
+    .h5#{$infix} {
+      font-size: $h5-font-size;
+    }
+    .h6#{$infix} {
+      font-size: $h6-font-size;
+    }
+  }
+}
+
+/*
+ * Responsive Displays
+ * display-{breakpoint}-{size}
+ */
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .display#{$infix}-#{1} {
+      font-size: $display1-size;
+      font-weight: $display1-weight;
+      line-height: $display-line-height;
+    }
+    .display#{$infix}-#{2} {
+      font-size: $display2-size;
+      font-weight: $display2-weight;
+      line-height: $display-line-height;
+    }
+    .display#{$infix}-#{3} {
+      font-size: $display3-size;
+      font-weight: $display3-weight;
+      line-height: $display-line-height;
+    }
+    .display#{$infix}-#{4} {
+      font-size: $display4-size;
+      font-weight: $display4-weight;
+      line-height: $display-line-height;
+    }
+  }
+}
+
+/*
+ * Responsive width, height, min-height
+ * w-{breakpoint}-{size}
+ * h-{breakpoint}-{size}
+ * hm-{breakpoint}-{size}
+
+ * sizes: 25, 50, 75, 100, auto, $sizes, gutter (only for w)
+ */
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @each $prop, $abbrev in (width: w, height: h) {
+      @each $size, $length in $sizes {
+        .#{$abbrev}#{$infix}-#{$size} {
+          #{$prop}: $length !important;
+        }
+      }
+    }
+    @each $size, $length in $sizes {
+      .hm#{$infix}-#{$size} {
+        min-height: $length !important;
+      }
+    }
+    .w#{$infix}-gutter {
+      width: calc(100% - #{$grid-gutter-width});
+    }
+  }
+}
+
+/*
+ * Responsive font-weight
+ * fw-{breakpoint}-{size}
+ *
+ * sizes: light, normal, bold
+ */
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .fw#{$infix}-light {
+      font-weight: $font-weight-light;
+    }
+    .fw#{$infix}-normal {
+      font-weight: $font-weight-normal;
+    }
+    .fw#{$infix}-bold {
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+/*
+ * Responsive line-height
+ * lh-{breakpoint}-{size}
+ *
+ * sizes: initial, md, lg
+ */
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .lh#{$infix}-initial {
+      line-height: initial;
+    }
+    .lh#{$infix}-md {
+      line-height: 1.5;
+    }
+    .lh#{$infix}-lg {
+      line-height: 2;
+    }
+  }
+}
+
+/*
+ * Responsive buttons
+ * btn-{breakpoint}-{size}
+ * sizes: sm, md, lg
+ */
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .btn#{$infix}-lg {
+      @include button-size(
+        $btn-padding-y-lg,
+        $btn-padding-x-lg,
+        $font-size-lg,
+        $btn-line-height-lg,
+        0// $btn-border-radius-lg
+      );
+    }
+
+    .btn#{$infix}-md {
+      @include button-size(
+        calc(#{$btn-padding-y-lg} * 0.75),
+        calc(#{$btn-padding-x-lg} * 0.75),
+        calc(#{$font-size-lg} * 0.75),
+        calc(#{$btn-line-height-lg} * 0.75),
+        0 // calc(#{$btn-border-radius-lg} * 0.75)
+      );
+    }
+
+    .btn#{$infix}-sm {
+      @include button-size(
+        $btn-padding-y-sm,
+        $btn-padding-x-sm,
+        $font-size-sm,
+        $btn-line-height-sm,
+        0// $btn-border-radius-sm
+      );
+    }
+  }
+}
