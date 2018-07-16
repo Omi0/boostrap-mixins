@@ -38,8 +38,15 @@ which must be placed after you import your variables.scss
 
 ```
 
-After that you can use custom generated classes in your project.
+So the result is something like
 
+```
+@import "./variables.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~@omio/boostrap-mixins/scss/mixins.scss";
+```
+
+After that you can use custom generated classes in your project.
 
 ## Mixins
 
