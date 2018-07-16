@@ -9,16 +9,25 @@ Dome extra handy classes for Boostrap 4. I commited it for personal usage. But i
 
 ## Installation
 
-To install enter the following command:
+To install enter the following command, second "npm instal" command is used to download files from repository:
 
 ```
 npm install --save Omi0/boostrap-mixins#master
+npm install
 ```
 
-To use you need to add this line to your styles.scss
+To update enter the following command. Which removed local files and reupload them from repository again
 
 ```
-@import "./Omi0/boostrap-mixins#master/scss/mixins.scss";
+npm uninstall @omio/boostrap-mixins && npm install
+```
+
+To use you need to add this line to your styles.scss file.
+
+```
+@import "./node_modules/@omio/boostrap-mixins/scss/mixins.scss";
+or
+@import "~@omio/boostrap-mixins/scss/mixins.scss";
 ```
 
 which must be placed after you import your variables.scss
@@ -28,6 +37,9 @@ which must be placed after you import your variables.scss
 @import "~bootstrap/scss/bootstrap.scss";
 
 ```
+
+After that you can use custom generated classes in your project.
+
 
 ## Mixins
 
