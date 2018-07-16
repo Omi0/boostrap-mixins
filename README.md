@@ -52,8 +52,8 @@ After that you can use custom generated classes in your project.
 
 ### Responsive Border
 
-border-{breakpoint}-{side}
-border-{breakpoint}-{side}-none
+border-{breakpoint}-{side}<br />
+border-{breakpoint}-{side}-none<br />
 sides: top, right, bottom, left, x, y
 
 Classes Examples:
@@ -67,8 +67,8 @@ border-lg-x-none
 
 Very handy when you need to removed spaces based on resulution. Expecially remove top and bottom gaps.
 
-mn{side}-{breakpoint}-{size}
-sides: t, b, r, l
+mn{side}-{breakpoint}-{size}<br />
+sides: t, b, r, l<br />
 sizes used $spacers array (can be extended). By defaults they are 1-5.
 
 Classes Examples:
@@ -82,7 +82,7 @@ mnb-xl-5
 
 Usefull when you need to change the size of the text
 
-{heading}-{breakpoint}
+{heading}-{breakpoint}<br />
 headings: h1-h6
 
 Classes Examples:
@@ -96,7 +96,7 @@ h5-lg
 
 Displays is super large heading. Thus it must be responsive. Otherwise you will end up having a hude text for a small display
 
-display-{breakpoint}-{size}
+display-{breakpoint}-{size}<br />
 sizes: 1-4
 
 Classes Examples:
@@ -110,8 +110,8 @@ display-lg-1
 
 Displays is super large heading. Thus it must be responsive. Otherwise you will end up having a hude text for a small display
 
-w-{breakpoint}-{size}
-h-{breakpoint}-{size}
+w-{breakpoint}-{size}<br />
+h-{breakpoint}-{size}<br />
 hm-{breakpoint}-{size}
 
 sizes inherits $sizes array and it can be extended. By default it has: 25, 50, 75, 100, auto. There is extra size: 'gutter' (only for width) which limits a width minus $grid-gutter-width property. Ideally it need to be used with horizontal margins 'mx-auto'
@@ -145,7 +145,7 @@ hm-lg-500px (min-height to 500px to lg)
 
 Implements $font-weight-light, $font-weight-normal, $font-weight-bold properties
 
-fw-{breakpoint}-{size}
+fw-{breakpoint}-{size}<br />
 sizes: light, normal, bold
 
 Classes Examples:
@@ -157,7 +157,7 @@ fw-md-bold
 
 ### Responsive Line-Height
 
-lh-{breakpoint}-{size}
+lh-{breakpoint}-{size}<br />
 sizes: initial, md (for 1.5), lg (for 2)
 
 Classes Examples:
@@ -173,7 +173,7 @@ lh-lg-lg
 Default boostrap has only btn-sm or btn-lg classes. We also addes extra btn-md class which is something in the between btn-sm or btn-lg.
 Idea of this is to be able to make action buttons responsive
 
-btn-{breakpoint}-{size}
+btn-{breakpoint}-{size}<br />
 sizes: sm, md, lg
 
 Classes Examples:
